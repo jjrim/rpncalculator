@@ -25,6 +25,7 @@ Operation *RPNcalculator::operation_type(char operation) {
     }
 
 }
+
 void RPNcalculator::perform(Operation *operation) {
 
     int first, second, result;
@@ -35,5 +36,10 @@ void RPNcalculator::perform(Operation *operation) {
     result = operation->perform(first, second);
     stack.push(result);
 }
+
+int RPNcalculator::process_formula(const string &formula) {
+
+}
+
 
 

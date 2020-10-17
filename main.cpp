@@ -6,7 +6,7 @@ int main() {
     std::string formula;
     std::getline(std::cin, formula);
     std::cout << "You entered " << formula << std::endl;
-    Rpn_calculator calculator;
+    RPNcalculator calculator;
     int result = calculator.process_formula(formula);
     std::cout << "The result is:\n";
     std::cout << result << std::endl;
