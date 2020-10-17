@@ -1,8 +1,7 @@
 #include <sstream>
 #include "rpncalculator.hpp"
-#include "operation.hpp"
 
-Operation *RPNcalculator::operation_type(char operation) {
+Operation *Rpn_calculator::operation_type(char operation) {
     switch (operation) {
         case Division_operation::DIVISION_CODE: {
             Operation *division = new Division_operation();
@@ -26,19 +25,33 @@ Operation *RPNcalculator::operation_type(char operation) {
 
 }
 
-void RPNcalculator::perform(Operation *operation) {
+void Rpn_calculator::perform(Operation *operation) {
 
-    int first, second, result;
+    int first, second, P_result;
     first = stack.top();
     stack.pop();
     second = stack.top();
     stack.pop();
-    result = operation->perform(first, second);
-    stack.push(result);
+    P_result = operation->perform(first, second);
+    stack.push(P_result);
 }
 
-int RPNcalculator::process_formula(const string &formula) {
+int Rpn_calculator::process_formula(const string &formula) {
+    istringstream iss, iss2;
+    iss = istringstream(formula);
+    string operand;
+    while(!iss.eof()) {
+        iss >> operand;
+        iss2 = istringstream(operand);
+        if (iss2 >> result) {
+            stack.push(result);
+        }
+        else {
+            perform(operation_type(operand[0]));
 
+        }
+    }
+    return stack.top();
 }
 
 

@@ -8,7 +8,7 @@ public:
 
     Division_operation() : Abstract_operation(DIVISION_CODE) {};
 
-    int perform(int a, int b) override { return a / b; }
+    int perform(int first, int second) override { return first / second; }
 
     ~Division_operation() override = default;
 

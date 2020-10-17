@@ -10,18 +10,19 @@
 using namespace std;
 
 
-class RPNcalculator {
+
+class Rpn_calculator {
 private:
     int result{};
-    static stack<int> stack;
+    stack<int> stack;
 
     static Operation *operation_type(char operation);
 
-    static void perform(Operation *operation);
+    void perform(Operation *operation);
 
 
 public:
-    RPNcalculator() = default;
+    Rpn_calculator() = default;
 
     int process_formula(const string &formula);
 

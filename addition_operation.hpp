@@ -8,7 +8,7 @@ public:
 
     Addition_operation() : Abstract_operation(ADDITION_CODE) {};
 
-    int perform(int a, int b) override  { return a + b; }
+    int perform(int first, int second) override  { return first + second; }
 
     ~Addition_operation() override = default;
 

@@ -8,7 +8,7 @@ public:
 
     Multiplication_operation() : Abstract_operation(MULTIPLICATION_CODE) {};
 
-    int perform(int a, int b) override { return a * b; }
+    int perform(int first, int second) override { return first * second; }
 
     ~Multiplication_operation() override = default;
 
